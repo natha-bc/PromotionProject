@@ -1,0 +1,13 @@
+header {
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 16px; /* Space between columns */
+  padding: 16px;
+  text-align: center;
+}
