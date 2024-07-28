@@ -1,0 +1,71 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <h1 class="text-primary text-3xl font-bold text-center ">
+        Sign In
+    </h1>
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+            <label for="firstName" class="block mb-2 text-primary text-sm font-medium text-center ">First Name</label>
+            <input formControlName="firstName" type="firstName" id="firstName"
+                class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none "
+                required />
+        </div>
+        <div>
+            <label for="lastName" class="block mb-2 text-primary text-sm font-medium text-center ">Last Name</label>
+            <input formControlName="lastName" type="lastName" id="lastName"
+                class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none "
+                required />
+        </div>
+    </div>
+    <div class="mb-6">
+        <label for="email" class="block mb-2 text-primary text-sm font-medium text-center ">Email</label>
+        <input formControlName="email" type="email" id="email"
+            class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none "
+            placeholder="name@socialface.com" required />
+    </div>
+    <div class="mb-6">
+        <label for="password" class="block mb-2 text-primary text-sm font-medium text-center ">Password</label>
+        <input formControlName="password" type="password" id="password"
+            class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none " required />
+    </div>
+    <div class="mb-6">
+        <label for="confirmPassword" class="block mb-2 text-primary text-sm font-medium text-center ">Confirm
+            Password</label>
+        <input formControlName="confirmPassword" type="password" id="confirmPassword"
+            class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none " required />
+    </div>
+
+    <div class="mb-6">
+        <label for="birthDate" class="block mb-2 text-primary text-sm font-medium text-center ">Birth Date:</label>
+        <input type="date" id="birthDate" formControlName="birthDate"
+            class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none ">
+    </div>
+    <div class="mb-6">
+        <label for="country" class="block mb-2 text-primary text-sm font-medium text-center">Country:</label>
+        <input type="text" id="country" formControlName="country"
+            class="input-background text-sm rounded-lg text-primary  block w-full p-2.5 focus:outline-none ">
+    </div>
+    <div class="mb-6">
+        <div class="flex">
+            <div class="flex items-center me-4">
+                <input type="radio" formControlName="notificationPreference" id="browserNotifications"
+                    value="browserNotifications"
+                    class="w-4 h-4 accent-primary bg-gray-100 border-gray-300 focus:ring-primary">
+                <label for="browserNotifications" class="ms-2 text-sm font-medium text-primary">In browser
+                    notifications.</label>
+            </div>
+            <div class="flex items-center me-4">
+                <input type="radio" formControlName="notificationPreference" id="emailNotifications"
+                    value="emailNotifications"
+                    class="w-4 h-4  accent-primary bg-gray-100 border-gray-300 focus:ring-primary">
+                <label for="emailNotifications" class="ms-2 text-sm font-medium text-primary">Only Email
+                    notifications.</label>
+            </div>
+
+        </div>
+    </div>
+    <div class="mb-6">
+        <button class="main-button rounded-lg p-2.5 block w-full" type="submit">Sign In</button>
+    </div>
+    
+
+</form>

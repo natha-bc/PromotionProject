@@ -1,0 +1,13 @@
+<div class="min-h-screen flex items-center justify-center bg-primary">
+    <div class="max-w-4xl w-full card-background rounded-lg relative overflow-hidden">
+        <div class="grid grid-cols-2  relative">
+            <div class="col-span-1 relative">
+                <app-form-curtain [@slide]="formToShow === 'login' ? 'right' : 'left'" class="absolute inset-0 bg-primary z-10"></app-form-curtain>
+                <app-login-form ></app-login-form>
+            </div>
+            <div class="col-span-1">
+                <app-sign-in-form></app-sign-in-form>
+            </div>
+        </div>
+    </div>
+</div>
