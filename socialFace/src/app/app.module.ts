@@ -10,19 +10,22 @@ import { LandingPageComponent } from './components/login/landing-page/landing-pa
 import { ThemeSwitchComponent } from './components/utils/theme-switch/theme-switch.component';
 import { reducers } from './store/reducers/index.reducers';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormCurtainComponent } from './components/login/form-curtain/form-curtain.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     SignInFormComponent,
     LandingPageComponent,
-    ThemeSwitchComponent
+    ThemeSwitchComponent,
+    FormCurtainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(reducers)
   ],
   providers: [],

@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from './store/reducers/index.reducers';
 import { selectTheme } from './store/selectors/theme.selectors';
+import { DARK_THEME } from './constants/constants';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,7 @@ export class AppComponent {
     this.theme$ = this.store.select(selectTheme);
     
     this.theme$.subscribe(theme => {      
-      document.body.className = ''; // Clear existing classes
-      document.body.classList.add(theme); // Add the new theme class
+      document.documentElement.setAttribute('data-theme', theme === DARK_THEME ? 'dark' : 'light');
     });
   }
 }

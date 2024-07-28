@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { LOGIN_FORM } from '../../../constants/constants';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../store/reducers/index.reducers';
+import { selectFormToShow } from '../../../store/selectors/landingPage.selectors';
 
 @Component({
   selector: 'app-login-form',
@@ -9,10 +13,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LoginFormComponent {
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       password: new FormControl('')
+    });
+    this.store.select(selectFormToShow).subscribe(formToShow => {
+      formToShow === LOGIN_FORM ? this.loginForm.enable() : this.loginForm.disable();
     });
   }
 

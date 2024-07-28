@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { count, first } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../store/reducers/index.reducers';
+import { selectFormToShow } from '../../../store/selectors/landingPage.selectors';
+import { SIGN_IN_FORM } from '../../../constants/constants';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -10,7 +13,7 @@ import { count, first } from 'rxjs';
 export class SignInFormComponent {
   signInForm: FormGroup;
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
     this.signInForm = new FormGroup({
       firstName: new FormControl(''),
       lastName: new FormControl(''),
@@ -20,6 +23,9 @@ export class SignInFormComponent {
       birthDate: new FormControl(''),
       country: new FormControl(''),
       notificationPreference: new FormControl('')
+    });
+    this.store.select(selectFormToShow).subscribe(formToShow => {
+      formToShow === SIGN_IN_FORM ? this.signInForm.enable() : this.signInForm.disable();
     });
   }
 

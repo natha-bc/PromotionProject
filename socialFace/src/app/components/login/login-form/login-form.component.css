@@ -1,17 +1,5 @@
 form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 16px;
+}
