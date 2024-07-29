@@ -12,6 +12,12 @@ import { reducers } from './store/reducers/index.reducers';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormCurtainComponent } from './components/login/form-curtain/form-curtain.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserFeedComponent } from './components/mainPage/user-feed/user-feed.component';
+import { UserPostComponent } from './components/utils/user-post/user-post.component';
+import { PublishComponent } from './components/mainPage/publish/publish.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,16 +25,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignInFormComponent,
     LandingPageComponent,
     ThemeSwitchComponent,
-    FormCurtainComponent
+    FormCurtainComponent,
+    UserFeedComponent,
+    UserPostComponent,
+    PublishComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
     StoreModule.forRoot(reducers)
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
