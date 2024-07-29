@@ -1,16 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import './custom-theme.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 :root{
   --primary-color: #009295;
   --secondary-color: #324b4c;
+  --image-button-color: #ff8847;
+  --music-button-color: #5fd6ae;
+  --tags-button-color: #787fb8;
+
 
   --background-color: #f5f5f5;
   --font-color: #000000;
   --card-background-color: #f5f5f5;
   --shadow-color:rgba(0,0,0,0.3);
   --input-background-color: f5f5f5;
+  --modal-background-color: #f5f5f5;
 
 }
 
@@ -25,8 +33,12 @@
   --font-color: #ffffff;
   --shadow-color:rgba(0,0,0,0.6);
   --input-background-color: rgba(255, 255, 255, 0.16);
+  --modal-background-color: #2C2C2C;
+
 
 } 
+
+
 
 .bg-primary {
   background-color: var(--background-color);
@@ -63,6 +75,55 @@
   border: 1px solid var(--primary-color);
   cursor:pointer;
 }
+
+.image-button {
+  background-color: var(--image-button-color);
+  color: var(--font-color);
+  border: 1px solid var(--image-button-color);
+  cursor:pointer;
+}
+
+.music-button {
+  background-color: var(--music-button-color);
+  color: var(--font-color);
+  border: 1px solid var(--music-button-color);
+  cursor:pointer;
+}
+
+.tags-button {
+  background-color: var(--tags-button-color);
+  color: var(--font-color);
+  border: 1px solid var(--tags-button-color);
+  cursor:pointer;
+}
+
+.main-outline-button {
+  background-color: var(--input-background-color);
+  color: var(--font-color);
+  border: 2px solid var(--primary-color);
+  cursor:pointer;
+}
+
+.post-card-text {
+  background-color: var(--input-background-color);
+}
+
+
+
+
+.modal-background {
+  background-color: var(--modal-background-color);
+  border-radius: 0.75rem /* 12px */;
+
+}
+
+
+
+.mat-mdc-dialog-surface{
+  background-color: var(--modal-background-color) !important;
+  border-radius: 12px !important; /* or 0.75rem */
+}
+
 
 
 /* 
@@ -110,3 +171,9 @@ input {
 }
 
  */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

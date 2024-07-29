@@ -1,0 +1,36 @@
+
+<form [formGroup]="publishForm" (ngSubmit)="onSubmit()" class=" p-6 modal-background rounded-xl w-full  overflow-hidden">
+
+    <div class="mb-2">
+      <label for="textContent" class="block  text-primary text-bg font-medium text-center ">Share it with your friends</label>
+
+      <textarea formControlName="textContent" class="input-background text-sm rounded-lg text-primary block w-full p-2.5 focus:outline-none" placeholder="What do you want to share?" required></textarea>
+    </div>
+  
+    <div class=" mb-2 ">
+      <label for="textContent" class="block text-primary text-md font-medium text-center ">Spice it up</label>
+    </div>
+    <div class="flex mb-2 space-x-2">
+        <button class="image-button rounded-lg p-2.5 flex-1  flex items-center justify-center" type="submit">
+          <span class="ml-2">Images</span>
+          <mat-icon>images</mat-icon>
+        </button>
+        <button class="music-button rounded-lg p-2.5 flex-1 flex items-center justify-center" type="submit">
+          <span class="ml-2">Music</span>
+          <mat-icon>music_note</mat-icon>
+        </button>
+        <button class="tags-button rounded-lg p-2.5 flex-1 flex items-center justify-center" type="submit">
+          <span class="ml-2">Tags</span>
+          <mat-icon>tag</mat-icon>
+        </button>
+      </div>
+
+
+
+    <div class="mb-6">
+      <button class="main-button rounded-lg p-2.5 block w-full" type="submit">Post</button>
+    </div>
+    <div class="mb-6" *ngIf="isUserTyping">
+      <button class="main-outline-button rounded-lg p-2.5 block w-full" type="submit">Post</button>
+    </div>
+  </form>
