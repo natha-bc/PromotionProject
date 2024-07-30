@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PublishComponent } from '../publish/publish.component';
 
@@ -6,7 +6,6 @@ import { PublishComponent } from '../publish/publish.component';
   selector: 'app-user-feed',
   templateUrl: './user-feed.component.html',
   styleUrl: './user-feed.component.css',
-  encapsulation: ViewEncapsulation.None // Add this line
   
 })
 export class UserFeedComponent {

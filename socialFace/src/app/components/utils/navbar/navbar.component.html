@@ -1,0 +1,28 @@
+<div class="primary-color p-4 flex items-center justify-between fixed top-0 left-0 w-full z-50">
+    <div class="flex items-center">
+      <mat-icon class="h-10 w-10 text-main-color">sentiment_satisfied</mat-icon>
+      <nav class="ml-6 text-main-color">
+        <a href="#" class="font-medium px-3 py-2 rounded-md">Dashboard</a>
+        <a href="#" class="font-medium px-3 py-2 rounded-md">Team</a>
+        <a href="#" class="font-medium px-3 py-2 rounded-md">Projects</a>
+        <a href="#" class="font-medium px-3 py-2 rounded-md">Calendar</a>
+      </nav>
+    </div>
+    <div class="flex items-center relative">
+      <button class="text-main-color mr-4 relative" (click)="openSettings()">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <div class="relative">
+        <img src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg" alt="Profile Picture" class="h-10 w-10 rounded-full">
+        <div class="absolute right-0 mt-2 w-48 modal-background rounded-md shadow-lg py-2 z-20 text-main-color" *ngIf="settingsOpen">
+          <a href="#" class="flex px-4 py-2 items-center justify-between">Your Profile</a>
+          <a href="#" class="flex px-4 py-2 items-center justify-between">Settings</a>
+          <a href="#" class="flex px-4 py-2 items-center justify-between">Sign out</a>
+          <a href="#" class="flex px-4 py-2 items-center justify-between">
+             <app-theme-switch></app-theme-switch>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

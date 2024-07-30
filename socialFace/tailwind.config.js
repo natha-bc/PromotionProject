@@ -19,8 +19,8 @@ module.exports = {
       '.bg-primary': {
         'background-color': 'var(--color-primary)',
       },
-      '.text-primary': {
-        'color': 'var(--color-primary)',
+      '.text-main-color': {
+        'color': 'var(--color-primary) ',
       },
       '.bg-secondary': {
         'background-color': 'var(--color-secondary)',

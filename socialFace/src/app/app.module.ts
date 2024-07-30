@@ -9,15 +9,14 @@ import { SignInFormComponent } from './components/login/sign-in-form/sign-in-for
 import { LandingPageComponent } from './components/login/landing-page/landing-page.component';
 import { ThemeSwitchComponent } from './components/utils/theme-switch/theme-switch.component';
 import { reducers } from './store/reducers/index.reducers';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FormCurtainComponent } from './components/login/form-curtain/form-curtain.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserFeedComponent } from './components/mainPage/user-feed/user-feed.component';
-import { UserPostComponent } from './components/utils/user-post/user-post.component';
-import { PublishComponent } from './components/mainPage/publish/publish.component';
+
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
+
+import { NavbarComponent } from './components/utils/navbar/navbar.component';
+import { MainPageModule } from './modules/main-page/main-page.module';
+import { SharedModule } from './modules/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,17 +25,15 @@ import { MatIconModule } from '@angular/material/icon';
     LandingPageComponent,
     ThemeSwitchComponent,
     FormCurtainComponent,
-    UserFeedComponent,
-    UserPostComponent,
-    PublishComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatIconModule,
+    
+    AppRoutingModule,
+    SharedModule,
+    MainPageModule,
     StoreModule.forRoot(reducers)
   ],
   providers: [
