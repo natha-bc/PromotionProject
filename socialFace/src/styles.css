@@ -44,7 +44,7 @@
   background-color: var(--background-color);
 }
 
-.text-primary {
+.text-main-color {
   color: var(--font-color);
 }
 
@@ -123,6 +123,11 @@
   background-color: var(--modal-background-color) !important;
   border-radius: 12px !important; /* or 0.75rem */
 }
+
+.primary-color {
+  background-color: var(--primary-color);
+}
+
 
 
 

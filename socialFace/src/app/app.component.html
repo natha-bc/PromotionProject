@@ -1,6 +1,4 @@
-<div>
-  <app-theme-switch></app-theme-switch>
-  <p>The current theme is: {{ theme$ | async }}</p>
+<app-navbar></app-navbar>
+<div class="pt-16">
+  <router-outlet></router-outlet>
 </div>
-
-<router-outlet />

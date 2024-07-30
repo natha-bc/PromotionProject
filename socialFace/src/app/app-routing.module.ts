@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './components/login/landing-page/landing-page.component';
 import { AuthGuard } from './guards/auth.guard';
-import { UserFeedComponent } from './components/mainPage/user-feed/user-feed.component';
 
 const routes: Routes = [
   { path: '', canActivate: [AuthGuard], component: LandingPageComponent },
   { path: 'login', component: LandingPageComponent },
-  { path: 'home', component: UserFeedComponent },
+  { path: 'home', loadChildren: () => import('./modules/main-page/main-page.module').then(m => m.MainPageModule) },
 
 ];
 @NgModule({
