@@ -6,13 +6,15 @@ import { UserFeedComponent } from '../../components/mainPage/user-feed/user-feed
 import { PublishComponent } from '../../components/mainPage/publish/publish.component';
 import { UserPostComponent } from '../../components/utils/user-post/user-post.component';
 import { SharedModule } from '../shared.module';
+import { CommentSectionComponent } from '../../components/utils/comment-section/comment-section.component';
 
 
 @NgModule({
   declarations: [
     UserFeedComponent,
     PublishComponent,
-    UserPostComponent
+    UserPostComponent,
+    CommentSectionComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { SharedModule } from '../shared.module';
   exports: [
     UserFeedComponent,
     PublishComponent,
-    UserPostComponent
+    UserPostComponent,
+    CommentSectionComponent
   ]
 })
 export class MainPageModule { }

@@ -1,0 +1,16 @@
+<div *ngFor="let comment of comments">
+    <div class="outline-text rounded-lg p-2.5 block  m-1" >
+        <p >
+            {{comment}}
+        </p>
+    </div>
+</div>
+<div class="m-1 pt-1 ">
+    <label for="textContent" class="block  text-main-color text-bg font-medium  text-left ">Create comment</label>
+    <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+        <textarea formControlName="newComment" class="input-background text-sm rounded-lg text-main-color block w-full focus:outline-none mb-2" required></textarea>
+        <div class="flex w-full align-middle justify-end">
+          <button type="submit" class="main-button text-sm rounded-lg text-main-color p-2.5">Add comment</button>
+        </div>
+      </form>
+</div>

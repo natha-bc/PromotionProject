@@ -3,8 +3,8 @@
         <div class="max-w-sm mx-auto card-background rounded-xl shadow-md overflow-hidden p-6">
             <button class="main-outline-button rounded-lg p-2.5 block w-full" (click)="openPublish()">What do you want to share?</button>
         </div>
-        <app-user-post class="block mb-6"></app-user-post>
-        <app-user-post class="block mb-6"></app-user-post>
-        <app-user-post class="block mb-6"></app-user-post>
+        <div *ngFor="let post of posts$ | async">
+            <app-user-post [post]="post" class="block mb-6"></app-user-post>
+        </div>
     </div>
 </div>
