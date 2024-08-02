@@ -1,16 +1,19 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { themeReducer } from './theme.reducer';
 import { formToShowReducer } from './landingPage.reducer';
-import { postReducer, PostState } from './post.reducers';
+import { postFeature, PostState } from './post.reducers';
+import { userFeature, UserState } from './user.reducers';
 
 export interface AppState {
   theme: string;
   formToShow: string;
-  posts: PostState
+  posts: PostState,
+  user: UserState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   theme: themeReducer,
   formToShow: formToShowReducer,
-  posts:postReducer
+  posts: postFeature.reducer,
+  user: userFeature.reducer
 };

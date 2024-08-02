@@ -10,6 +10,7 @@ export const LOGIN_FORM = 'login';
 
 // URLS
 export const POSTS_URL = 'https://my-json-server.typicode.com/natha-bc/PromotionProject/Posts';
+export const USERS_URL = 'https://my-json-server.typicode.com/natha-bc/PromotionProject/Users';
 
 //configs
 export const INITIAL_THEME = DARK_THEME;
