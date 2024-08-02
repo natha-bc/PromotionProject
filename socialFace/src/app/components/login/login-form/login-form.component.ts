@@ -1,19 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { LOGIN_FORM } from '../../../constants/constants';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { AppState } from '../../../store/reducers/index.reducers';
 import { selectFormToShow } from '../../../store/selectors/landingPage.selectors';
+import { LoginService } from '../../../services/login.service';
+import { loadUser, setUser } from '../../../store/actions/user.actions';
+import { Observable } from 'rxjs';
+import { User } from '../../../models/user';
+import { selectUser } from '../../../store/selectors/user.selectors';
+
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
-
-  constructor(private store: Store<AppState>) {
+  user$: Observable<User | null> | undefined;
+    constructor(private store: Store<AppState>,
+    private loginService: LoginService
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       password: new FormControl('')
@@ -23,8 +31,15 @@ export class LoginFormComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.store.dispatch(loadUser());
+  }
   onSubmit() {
     console.log(this.loginForm.value);
     console.log('Submitted');
+    this.loginService.getUserByEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password)
+
+    
   }
+
 }

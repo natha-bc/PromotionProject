@@ -5,7 +5,7 @@ export interface User {
   birthDate: Date;
   country: string;
   notificationPreferences: string;
-  avatar: string;
+  profilePicture: string;
   role: string;
   likedPosts: number[];
 }

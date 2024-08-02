@@ -3,7 +3,6 @@ import { Post } from '../../../models/post';
 import { Store, select } from '@ngrx/store';
 import { PostsService } from '../../../services/posts.service';
 import { AppState } from '../../../store/reducers/index.reducers';
-import { selectAllPosts } from '../../../store/selectors/post.selectors';
 import { updatePost } from '../../../store/actions/post.actions';
 
 @Component({

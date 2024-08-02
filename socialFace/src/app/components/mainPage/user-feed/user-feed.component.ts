@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { loadPostsSuccess, loadPostsFailure } from '../../../store/actions/post.actions';
 import { AppState } from '../../../store/reducers/index.reducers';
 import { select, Store } from '@ngrx/store';
-import { selectAllPosts } from '../../../store/selectors/post.selectors';
+import { selectPosts } from '../../../store/selectors/post.selectors';
 
 @Component({
   selector: 'app-user-feed',
@@ -23,7 +23,7 @@ export class UserFeedComponent implements OnInit {
     private store: Store<AppState>
 
   ) {
-    this.posts$ = this.store.pipe(select(selectAllPosts));
+    this.posts$ = this.store.pipe(select(selectPosts));
   }
 
   ngOnInit(): void {
